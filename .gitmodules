@@ -1,0 +1,12 @@
+[submodule "dtcc-builder"]
+	path = dtcc-builder
+	url = https://gitlab.com/dtcc-platform/dtcc-builder.git
+[submodule "dtcc-core"]
+	path = dtcc-core
+	url = https://gitlab.com/dtcc-platform/dtcc-core.git
+[submodule "dtcc-docker"]
+	path = dtcc-docker
+	url = https://gitlab.com/dtcc-platform/dtcc-docker.git
+[submodule "dtcc-model"]
+	path = dtcc-model
+	url = https://gitlab.com/dtcc-platform/dtcc-model.git
