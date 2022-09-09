@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+#
+# Copyright (C) 2022 Anders Logg
+# Licensed under the MIT License
+#
+# This script builds the documentation for the DTCC Platform
+# by pulling documentation from all DTCC Components and then
+# building a website using Docusaurus.
+
+# Check that we are running the script from the root
+if [ ! -f bin/dtcc-build-documentation ]; then
+    echo "*** This script must be run from the root directory"
+    exit 1
+fi
+
+# Get submodules
+submodules=`git config --file .gitmodules --get-regexp path | awk '{ print $2 }'`
+
+# Pull documentation for submodules
+docdir="website/docs"
+for submodule in $submodules; do
+
+    echo "Pulling documentation for $submodule..."
+
+    # Get latest commits from submodule
+    (cd $submodule; git pull)
+
+    # Overwrite documentation for submodule
+    rm -rf $docdir/$submodule
+    cp -r $submodule/doc $docdir/$submodule
+
+done
