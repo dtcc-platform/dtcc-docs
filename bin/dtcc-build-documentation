@@ -27,7 +27,6 @@ for submodule in $submodules; do
 
     # Copy documentation from submodule (overwrite)
     rm -rf $docdir/$submodule
-    cp $submodule/README.md $docdir/$submodule
-    cp -r $submodule/doc $docdir/$submodule/doc
+    cp -r $submodule/doc $docdir/$submodule
 
 done
