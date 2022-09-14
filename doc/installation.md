@@ -3,7 +3,7 @@
 DTCC Doc uses [Docusaurus](https://docusaurus.io/) to generate a
 website for the documentation of the DTCC Platform.
 
-The contents of the website resides in the `website` directory.
+The contents of the website reside in the `website` directory.
 This directory is initially created by the command
 
     npx create-docusaurus@latest website classic
@@ -14,5 +14,5 @@ DTCC Doc.
 
 Note that DTCC Doc requires Node.js which can be installed by
 
-    brew install node # on Mac
-	apt install nodjs # on Ubuntu
+    brew install node  # on Mac
+	apt install nodjs  # on Ubuntu
