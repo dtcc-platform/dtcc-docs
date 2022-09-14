@@ -13,6 +13,11 @@ if [ ! -f bin/dtcc-build-documentation ]; then
     exit 1
 fi
 
+# Initialize and get latest submodules
+
+git submodule update --init --recursive
+git submodule update --remote
+
 # Get submodules
 submodules=`git config --file .gitmodules --get-regexp path | awk '{ print $2 }'`
 
@@ -22,8 +27,9 @@ for submodule in $submodules; do
 
     echo "Pulling documentation for $submodule..."
 
+# Replaced by lines 18-19
     # Get latest commits from submodule
-    (cd $submodule; git pull)
+#    (cd $submodule; git pull)
 
     # Copy documentation from submodule (overwrite)
     rm -rf $docdir/$submodule
