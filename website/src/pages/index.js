@@ -13,12 +13,21 @@ function HomepageHeader() {
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className="container">
         <h1 className="hero__title">{siteConfig.title}</h1>
-        <p className="hero__subtitle">{siteConfig.tagline}</p>
+          <p className="hero__subtitle">{siteConfig.tagline}</p>
+	  <p>
+	      The DTCC Platform is an open-source platform for the exploration of
+	      digital twins for cities. The platform is developed and maintained by
+	      the Digital Twin Cities Centre (DTCC) hosted by Chalmers University of
+	      Technology. The aim is to develop an open modelling, simulation and
+	      visualisation platform for interactive planning, design, and
+	      exploration of cities.
+	  </p>
+	  <br/>
         <div className={styles.buttons}>
           <Link
             className="button button--secondary button--lg"
-            to="/docs/intro">
-            Docusaurus Tutorial - 5min ⏱️
+            to="/docs/introduction">
+              Documentation 📚
           </Link>
         </div>
       </div>
