@@ -10,3 +10,6 @@
 [submodule "dtcc-model"]
 	path = dtcc-model
 	url = https://gitlab.com/dtcc-platform/dtcc-model.git
+[submodule "dtcc-viewer"]
+	path = dtcc-viewer
+	url = https://gitlab.com/dtcc-platform/dtcc-viewer.git

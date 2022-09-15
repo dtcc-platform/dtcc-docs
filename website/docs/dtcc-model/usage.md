@@ -1,3 +1,3 @@
-## Usage
+# Usage
 
 -![](dtcc.dot.png)

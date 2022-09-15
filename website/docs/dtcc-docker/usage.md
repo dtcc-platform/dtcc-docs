@@ -1,9 +1,7 @@
-## Usage
+# Usage
 
 **FIXME**
 The text below is copied from the old DTCC Builder README and needs to be edited.
-
-### Building the Docker container
 
 The most convenient way to work with the DTCC Platform is to use the
 custom [Docker](https://www.docker.com/) image, which contains all the
