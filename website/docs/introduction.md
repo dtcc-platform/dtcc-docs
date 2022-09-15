@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# Documentation
+# Introduction
 
 The DTCC Platform is an open-source platform for the exploration of
 digital twins for cities. The platform is developed and maintained by
