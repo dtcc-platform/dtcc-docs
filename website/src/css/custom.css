@@ -4,24 +4,26 @@
  * work well for content-centric websites.
  */
 
-/* AL: Styled from DTCC primary color #6fa8d6 using this tool: https://docusaurus.io/docs/styling-layout. */
+/* AL: Copied from https://github.com/paramountric/digitaltwincityviewer/tree/main/website
+   AL: Can also be styled using https://docusaurus.io/docs/styling-layout. */
+
 :root {
-  --ifm-color-primary: #6fa8d6;
-  --ifm-color-primary-dark: #5699cf;
-  --ifm-color-primary-darker: #4991cb;
-  --ifm-color-primary-darkest: #3279b1;
-  --ifm-color-primary-light: #88b7dd;
-  --ifm-color-primary-lighter: #95bfe1;
-  --ifm-color-primary-lightest: #4991cb;
+  --ifm-color-primary: #2d7eae;
+  --ifm-color-primary-dark: #2d7eae;
+  --ifm-color-primary-darker: #1e5474;
+  --ifm-color-primary-darkest: #0f2a3a;
+  --ifm-color-primary-light: #5ba3cd;
+  --ifm-color-primary-lighter: #99c6e0;
+  --ifm-color-primary-lightest: #c2ddec;
+  --ifm-code-font-size: 95%;
 }
 
-/* AL: Styled from DTCC primary color #6fa8d6 using this tool: https://docusaurus.io/docs/styling-layout. */
 [data-theme='dark'] {
-  --ifm-color-primary: #6fa8d6;
-  --ifm-color-primary-dark: #5699cf;
-  --ifm-color-primary-darker: #4991cb;
-  --ifm-color-primary-darkest: #3279b1;
-  --ifm-color-primary-light: #88b7dd;
-  --ifm-color-primary-lighter: #95bfe1;
-  --ifm-color-primary-lightest: #bbd6ec;
+  --ifm-color-primary: #328CC1;
+  --ifm-color-primary-dark: #2d7eae;
+  --ifm-color-primary-darker: #1e5474;
+  --ifm-color-primary-darkest: #0f2a3a;
+  --ifm-color-primary-light: #5ba3cd;
+  --ifm-color-primary-lighter: #99c6e0;
+  --ifm-color-primary-lightest: #c2ddec;
 }
