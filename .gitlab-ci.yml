@@ -1,3 +1,9 @@
+build:
+  image: 
+    name: node:16-alpine
+    entrypoint: [""]
+  script:
+    - git clone 
 upload to s3:
   image:
     name: banst/awscli
