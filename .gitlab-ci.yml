@@ -31,18 +31,19 @@ cache:
 
 test_async:
   script:
-    - sh ./bin/dtcc-build-documentation
-    - cd website
-    - npm install
+    - aws s3 ls s3://$S3_BUCKET
+    - #sh ./bin/dtcc-build-documentation
+    - #cd website
+    - #npm install
     #- node ./specs/start.js ./specs/async.spec.js
     - ls
     - pwd
-    - npm run build
-    - ls
-    - cd dist
-    - tar -czvf dist.tar.gz *
-    - cd ..
-    - ls 
+    - #npm run build
+    - #ls
+    - #cd dist
+    - #tar -czvf dist.tar.gz *
+    - #cd ..
+    - #ls 
     #- /bin/sh deploy.sh
     #-oStrictHostKeyChecking=no 
 
