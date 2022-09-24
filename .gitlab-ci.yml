@@ -31,6 +31,7 @@ cache:
 
 test_async:
   script:
+    -sh ./bin/dtcc-build-documentation
     - cd website
     - npm install
     #- node ./specs/start.js ./specs/async.spec.js
