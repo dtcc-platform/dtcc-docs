@@ -45,7 +45,7 @@ test_async:
     #- /bin/sh deploy.sh
     #-oStrictHostKeyChecking=no 
 
-test_db:
-  script:
-    - npm install
+#test_db:
+ # script:
+    #- npm install
     #- node ./specs/start.js ./specs/db-postgres.spec.js
