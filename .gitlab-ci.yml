@@ -49,3 +49,5 @@ test_async:
  # script:
     #- npm install
     #- node ./specs/start.js ./specs/db-postgres.spec.js
+variables:
+     GIT_SUBMODULE_STRATEGY: recursive
