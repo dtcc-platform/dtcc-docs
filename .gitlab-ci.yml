@@ -1,14 +1,50 @@
-build:
-  image: 
-    name: node:16-alpine
-    entrypoint: [""]
+image: node:16-alpine
+
+# Pick zero or more services to be used on all builds.
+# Only needed when using a docker container to run your tests in.
+# Check out: http://docs.gitlab.com/ee/ci/docker/using_docker_images.html#what-is-a-service
+services:
+  #- mysql:latest
+  #- redis:latest
+  #- postgres:latest
+
+before_script:
+ #- apk update && apk add openssh-client rsync
+ #- eval $(ssh-agent -s)
+ #- mkdir -p ~/.ssh
+ #- echo "Host *\n\tStrictHostKeyChecking no" >> ~/.ssh/config
+ #- echo "$SSH_PRIVATE_KEY" > key.pem
+ #- echo "$PORTAL_HOST_KEY" > ~/.ssh/known_hosts
+ #- echo "$SSH_PRIVATE_KEY"
+ #- echo "$SSH_PRIVATE_KEY" | ssh-add -
+ #- printenv SSH_PRIVATE_KEY 
+ #- cat ~/.ssh/known_hosts
+ #- chmod 400 key.pem
+ #- chmod +x deploy.sh
+
+
+# This folder is cached between builds
+# https://docs.gitlab.com/ee/ci/yaml/index.html#cache
+cache:
+  paths:
+    - node_modules/
+
+test_async:
   script:
-    - git clone 
-upload to s3:
-  image:
-    name: banst/awscli
-    entrypoint: [""]
+    - npm install
+    #- node ./specs/start.js ./specs/async.spec.js
+    - ls
+    - pwd
+    - npm run build
+    - ls
+    - cd dist
+    - tar -czvf dist.tar.gz *
+    - cd ..
+    - ls 
+    #- /bin/sh deploy.sh
+    #-oStrictHostKeyChecking=no 
+
+test_db:
   script:
-    - aws configure set region us-east-1
-    - touch foo.txt
-    - aws s3 cp foo.txt s3://$S3_BUCKET/foo.txt
+    - npm install
+    #- node ./specs/start.js ./specs/db-postgres.spec.js
