@@ -32,9 +32,9 @@ cache:
 upload_s3:
   script:
     - aws s3 ls s3://$S3_BUCKET
-    #- sh ./bin/dtcc-build-documentation
-    #- #cd website
-    #- #npm install
+    - sh ./bin/dtcc-build-documentation
+    - cd website
+    - npm install
     #- node ./specs/start.js ./specs/async.spec.js
     - ls
     - pwd
