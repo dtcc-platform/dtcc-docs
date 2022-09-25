@@ -38,7 +38,7 @@ upload_s3:
     #- node ./specs/start.js ./specs/async.spec.js
     - ls
     - pwd
-    #- #npm run build
+    - npm run build
     #- #ls
     #- #cd dist
     #- #tar -czvf dist.tar.gz *
