@@ -38,6 +38,8 @@ build:
   script:
     #- sudo apt-get install lftp -y # add extra (outside of registered Docker file) dependencies here
     - sh ./bin/dtcc-build-documentation && cd website && npm install && npm run build
+    - pwd 
+    - ls
   artifacts:
     paths:
       - website/build/
@@ -73,6 +75,7 @@ deploy:
   stage: deploy
   image: registry.gitlab.com/gitlab-org/cloud-deploy/aws-base:latest
   script:
+    - ls -alt
     - aws s3 ls s3://$S3_BUCKET
     #- npm install
     #- node ./specs/start.js ./specs/db-postgres.spec.js
