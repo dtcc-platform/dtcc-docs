@@ -1,14 +1,17 @@
-image: node:16-alpine
+stages:
+  - build
+  - deploy
+
 #image: registry.gitlab.com/gitlab-org/cloud-deploy/aws-base:latest
 # Pick zero or more services to be used on all builds.
 # Only needed when using a docker container to run your tests in.
 # Check out: http://docs.gitlab.com/ee/ci/docker/using_docker_images.html#what-is-a-service
-services:
+#services:
   #- mysql:latest
   #- redis:latest
   #- postgres:latest
 
-before_script:
+#before_script:
  #- apk update && apk add openssh-client rsync
  #- eval $(ssh-agent -s)
  #- mkdir -p ~/.ssh
@@ -25,30 +28,52 @@ before_script:
 
 # This folder is cached between builds
 # https://docs.gitlab.com/ee/ci/yaml/index.html#cache
-cache:
-  paths:
-    - node_modules/
+#cache:
+#  paths:
+#    - node_modules/
 
-upload_s3:
+build:
+  stage: build
+  image: node:16-alpine
   script:
+    #- sudo apt-get install lftp -y # add extra (outside of registered Docker file) dependencies here
+    - sh ./bin/dtcc-build-documentation && cd website && npm install && npm run build
+  artifacts:
+    paths:
+      - website/build/
+      #- unittests/
+
+
+
+#build:
+#  stage: build
+#  image: node:16-alpine
+#  script:
     #- aws s3 ls s3://$S3_BUCKET
-    - sh ./bin/dtcc-build-documentation
-    - cd website
-    - npm install
+#    - cd website
+#    - npm install
     #- node ./specs/start.js ./specs/async.spec.js
-    - ls
-    - pwd
-    - npm run build
+#    - ls
+#    - pwd
+#    - npm run build
     #- #ls
     #- #cd dist
     #- #tar -czvf dist.tar.gz *
     #- #cd ..
     #- #ls 
     #- /bin/sh deploy.sh
-    #-oStrictHostKeyChecking=no 
+    #-oStrictHostKeyChecking=no
+#  artifacts:
+#    paths:
+#      - build/
+  #- unittests/
+ 
 
-#test_db:
- # script:
+deploy:
+  stage: deploy
+  image: registry.gitlab.com/gitlab-org/cloud-deploy/aws-base:latest
+  script:
+    - aws s3 ls s3://$S3_BUCKET
     #- npm install
     #- node ./specs/start.js ./specs/db-postgres.spec.js
 variables:
