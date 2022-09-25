@@ -1,5 +1,5 @@
-#image: node:16-alpine
-image: registry.gitlab.com/gitlab-org/cloud-deploy/aws-base:latest
+image: node:16-alpine
+#image: registry.gitlab.com/gitlab-org/cloud-deploy/aws-base:latest
 # Pick zero or more services to be used on all builds.
 # Only needed when using a docker container to run your tests in.
 # Check out: http://docs.gitlab.com/ee/ci/docker/using_docker_images.html#what-is-a-service
@@ -31,14 +31,14 @@ cache:
 
 upload_s3:
   script:
-    - aws s3 ls s3://$S3_BUCKET
-    #- sh ./bin/dtcc-build-documentation
-    #- #cd website
-    #- #npm install
+    #- aws s3 ls s3://$S3_BUCKET
+    - sh ./bin/dtcc-build-documentation
+    - cd website
+    - npm install
     #- node ./specs/start.js ./specs/async.spec.js
     - ls
     - pwd
-    #- #npm run build
+    - npm run build
     #- #ls
     #- #cd dist
     #- #tar -czvf dist.tar.gz *
