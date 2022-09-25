@@ -76,9 +76,10 @@ deploy:
   image: registry.gitlab.com/gitlab-org/cloud-deploy/aws-base:latest
   script:
     - ls -alt
-    - cd website
+    - cd website/build
     - ls -alt
     - aws s3 ls s3://$S3_BUCKET
+    - aws s3 sync . s3://dtcctest
     #- npm install
     #- node ./specs/start.js ./specs/db-postgres.spec.js
 variables:
