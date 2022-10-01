@@ -79,7 +79,7 @@ deploy:
     - cd website/build
     - ls -alt
     - aws s3 ls s3://$S3_BUCKET
-    - aws s3 sync . s3://dtcctest
+    - aws s3 sync . s3://$S3_BUCKET
     #- npm install
     #- node ./specs/start.js ./specs/db-postgres.spec.js
 variables:
