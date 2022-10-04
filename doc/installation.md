@@ -4,8 +4,8 @@
 
 DTCC Doc requires Node.js which can be installed by
 
-    brew install node   # on Mac
-	apt install nodejs  # on Ubuntu
+    brew install node  # on Mac
+    apt install npm    # on Ubuntu
 
 ## Initial setup
 
