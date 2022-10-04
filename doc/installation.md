@@ -2,10 +2,17 @@
 
 ## Requirements
 
-DTCC Doc requires Node.js which can be installed by
+DTCC Doc requires Node.js.
 
-    brew install node  # on Mac
-    apt install npm    # on Ubuntu
+To install on Mac, run the command
+
+    brew install node
+
+To install on Ubuntu, run the commands
+
+    curl -sL https://deb.nodesource.com/setup_18.x -o nodesource_setup.sh
+    sudo bash nodesource_setup.sh
+    sudo apt install nodejs
 
 ## Initial setup
 
