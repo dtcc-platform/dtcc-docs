@@ -20,6 +20,7 @@ const sidebars = {
     // But you can create a sidebar manually
     tutorialSidebar: [
 	'introduction',
+	'development',
 	{
 	    type: 'category',
 	    label: 'DTCC Model',
