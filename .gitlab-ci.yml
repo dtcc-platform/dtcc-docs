@@ -105,19 +105,19 @@ update:references:
     UPDATE_SUBMODULE: 'true'
 
 
-update:submodules:
-  parallel:
-    matrix:
-      - DOWNSTREAM_PROJECT: ["dtcc-platform/dtcc-builder", "dtcc-platform/dtcc-core", 
-                              "dtcc-platform/dtcc-model", "dtcc-platform/dtcc-viewer", 
-                              "dtcc-platform/dtcc-docker"]
-  trigger:
-    branch: '${CI_DEFAULT_BRANCH}'
-    project: $DOWNSTREAM_PROJECT
-    strategy: depend
-  stage: update
-  variables:
-    UPDATE_SUBMODULE: 'true'
+# update:submodules:
+#   parallel:
+#     matrix:
+#       - DOWNSTREAM_PROJECT: ["dtcc-platform/dtcc-builder", "dtcc-platform/dtcc-core", 
+#                               "dtcc-platform/dtcc-model", "dtcc-platform/dtcc-viewer", 
+#                               "dtcc-platform/dtcc-docker"]
+#   trigger:
+#     branch: '${CI_DEFAULT_BRANCH}'
+#     project: $DOWNSTREAM_PROJECT
+#     strategy: depend
+#   stage: update
+#   variables:
+#     UPDATE_SUBMODULE: 'true'
 
 # ------------------
 #image: registry.gitlab.com/gitlab-org/cloud-deploy/aws-base:latest
