@@ -6,6 +6,7 @@ variables:
   GITLAB_TOKEN: glpat-HghzTu-BX5UALdsZn7B7
   GITLAB_USERNAME: sidkas
   COMMIT_MESSAGE: Automatic submodule update triggered
+  UPDATE_SUBMODULE: 'false'
 
 stages:
   - update
