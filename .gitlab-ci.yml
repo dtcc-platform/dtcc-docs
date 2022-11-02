@@ -100,12 +100,12 @@ update:references:
     branch: '${CI_DEFAULT_BRANCH}'
     project: dtcc-platform/dtcc-builder
     strategy: depend
-  stage: trigger
+  stage: update
   variables:
     UPDATE_SUBMODULE: 'true'
 
 
-update:references:
+update:submodules:
   parallel:
     matrix:
       - DOWNSTREAM_PROJECT: ["dtcc-platform/dtcc-builder", "dtcc-platform/dtcc-core", 
@@ -115,7 +115,7 @@ update:references:
     branch: '${CI_DEFAULT_BRANCH}'
     project: $DOWNSTREAM_PROJECT
     strategy: depend
-  stage: trigger
+  stage: update
   variables:
     UPDATE_SUBMODULE: 'true'
 
