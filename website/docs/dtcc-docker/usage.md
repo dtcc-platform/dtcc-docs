@@ -1,7 +1,11 @@
 # Usage
 
-**FIXME**
-The text below is copied from the old DTCC Builder README and needs to be edited.
+> **Note:** Linux users need to add themselves to the `docker` group
+to run the DTCC Docker scripts (which would otherwise require `sudo`).
+To do this, run the command `sudo usermod -aG docker ${USER}`. You will
+need to logout and login for the command to take effect.
+
+> **FIXME** The text below is copied from the old DTCC Builder README and needs to be edited.
 
 The most convenient way to work with the DTCC Platform is to use the
 custom [Docker](https://www.docker.com/) image, which contains all the
