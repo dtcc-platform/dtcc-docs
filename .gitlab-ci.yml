@@ -86,7 +86,7 @@ update:submodule:
   extends: .git:push
   rules:
     - if: $UPDATE_SUBMODULE == "true"
-      when: never
+      #when: never
   script:
     - cd "${CI_COMMIT_SHA}"
     - git submodule update --init --recursive
