@@ -10,7 +10,7 @@ const config = {
     tagline: 'An open-source platform for Digital Twin Cities',
     url: 'https://dtcc.chalmers.se',
     baseUrl: '/',
-    onBrokenLinks: 'throw',
+    onBrokenLinks: 'warn',
     onBrokenMarkdownLinks: 'warn',
     favicon: 'img/dtcc-favicon.ico',
 

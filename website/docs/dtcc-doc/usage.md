@@ -9,16 +9,20 @@ folder of each submodule.
 
 To build the documentation, run the script
 
-	bin/dtcc-build-documentation
+    bin/dtcc-build-documentation
 
 This pulls in the latest documentation from all components of DTCC
 Platform to the directory `website/docs`.
 
+> **Note:** The script `bin/dtcc-build-documentation` will pull the
+latest `develop` branches for all submodules. To park the submodules
+at these commits, run `git commit` to commit the changes.
+
 To fire up the website, run the following commands:
 
     cd website
-	npm install
-	npm start &
+    npm install
+    npm start &
 
 The website will then be accessible at
 
