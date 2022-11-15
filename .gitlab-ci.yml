@@ -2,9 +2,6 @@ variables:
   # https://hub.docker.com/r/alpine/git/tags
   GIT_VERSION: v2.30.1
 
-  # TODO - Need to move the varables in gitlab CI/CD variables
-  GITLAB_TOKEN: glpat-HghzTu-BX5UALdsZn7B7
-  GITLAB_USERNAME: sidkas
   COMMIT_MESSAGE: Automatic submodule update triggered
   UPDATE_SUBMODULE: 'false'
 
@@ -89,14 +86,14 @@ update:submodule:
   extends: .git:push
   rules:
     - if: $UPDATE_SUBMODULE == "true"
-      when: never
+      #when: never
   script:
     - cd "${CI_COMMIT_SHA}"
     - git submodule update --init --recursive
     - git submodule update --remote
   stage: update
 
-update:references:
+update:builder:
   trigger:
     branch: '${CI_DEFAULT_BRANCH}'
     project: dtcc-platform/dtcc-builder
@@ -104,6 +101,7 @@ update:references:
   stage: update
   variables:
     UPDATE_SUBMODULE: 'true'
+
 
 
 # update:submodules:
