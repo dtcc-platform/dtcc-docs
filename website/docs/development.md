@@ -36,3 +36,13 @@ DTCC Platform uses the following Git practices:
 * When the work is done, make a pull request for merging the branch into `develop`.
 * When the work has been merged, the branch should be deleted to keep things tidy.
 * When making a release, `develop` is merged into `main` and a release is made from `main`.
+
+## Tips & tricks
+
+When cloning a repository that may contain submodules, use
+
+    git clone --recursive <url>
+
+If you have already cloned a repository and want to load all submodules, use
+
+    git submodule update --init
