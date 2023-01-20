@@ -39,6 +39,8 @@ DTCC Platform uses the following Git practices:
 
 ## Tips & tricks
 
+### Using Git submodules
+
 When cloning a repository that may contain submodules, use
 
     git clone --recursive <url>
@@ -46,3 +48,53 @@ When cloning a repository that may contain submodules, use
 If you have already cloned a repository and want to load all submodules, use
 
     git submodule update --init
+
+### Remote development
+
+Remote development is an alternative to local development (building
+and running on the host system) and also an alternative to local
+development in Docker containers (building and running inside a local
+Docker container). The main idea is to build and run on a remote
+system, either through an IDE (like Visual Studio Code) or in a
+terminal using SSH. Below follows some simple steps for setting up
+remote development using SSH on a Mac.
+
+First, install macFUSE needed for mounting remote filesystems via SSH:
+
+    brew install --cask macfuse
+
+Then, mount the desired remote directory using the `sshfs` command,
+something like this:
+
+    sshfs -o allow_other,default_permissions logg@compute.dtcc.chalmers.se:/scratch/logg /Users/logg/scratch/compute
+
+For simplicity, this can be put in a little script named
+`mount-compute` stored on the local machine:
+
+    #!/usr/bin/env bash
+    USER=logg
+    SERVER=compute.dtcc.chalmers.se
+    LOCAL=/Users/logg/scratch/compute
+    REMOTE=compute/scratch/logg
+    sshfs -o allow_other,default_permissions $USER@$SERVER:$REMOTE $LOCAL
+
+Note that this should *not* be run as root (using `sudo`) since this
+will give you problems with permissions (not able to write files). Also
+note that you should not use `~` in the paths since this might be
+expanded in the shell and confuse `sshfs` (causing it to hang by
+setting up some circular mounting). Instead, full absolute paths
+should be used.
+
+The corresponding script for unmounting the remote directory is
+`umount-compute`:
+
+    #!/usr/bin/env bash
+    LOCAL=/Users/logg/scratch/compute
+    umount $LOCAL
+
+Or just run the `umount` command on the directory.
+
+Once the remote directory has been mounted, the remote directory is
+available on the local system. Fire up your editor on the local system
+to edit source files and do everything else in one or more terminals
+to the remote system: `git`, `cmake`, `make` etc.
