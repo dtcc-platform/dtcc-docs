@@ -33,6 +33,7 @@ DTCC Platform uses the following Git practices:
 * All work should take place in separate branches (not directly in `develop` and certainly not in `main`).
 * Branches for development (new features) should be named `dev/branch_name` where `branch_name` is a free form descriptive name.
 * Branches for fixes (bugs, small things) should be named `fix/branch_name` where `branch_name` is a free form descriptive name.
+* Branches that will (likely) not be merged but kept for reference should be named `old/branch_name` where `branch_name` is a free form descriptive name.
 * When the work is done, make a pull request for merging the branch into `develop`.
 * When the work has been merged, the branch should be deleted to keep things tidy.
 * When making a release, `develop` is merged into `main` and a release is made from `main`.
