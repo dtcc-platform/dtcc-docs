@@ -21,8 +21,8 @@ Platform.
 | class    | `PascalCase`   | `PascalCase`   | `CamelCase`   |
 | module   | `snake_case`   |                |               |
 
-In addition to this, DTCC Platform uses `kebab-case` for API endpoints
-and `camelCase` for JSON.
+In addition to this, DTCC Platform uses `kebab-case` for naming API endpoints,
+branches and scripts. For JSON `camelCase` is used.
 
 ## Git practices
 
@@ -31,9 +31,10 @@ DTCC Platform uses the following Git practices:
 * The main (release) branch for each repository is named `main`.
 * The development branch for each repository is named `develop`.
 * All work should take place in separate branches (not directly in `develop` and certainly not in `main`).
-* Branches for development (new features) should be named `dev/branch_name` where `branch_name` is a free form descriptive name.
-* Branches for fixes (bugs, small things) should be named `fix/branch_name` where `branch_name` is a free form descriptive name.
-* Branches that will (likely) not be merged but kept for reference should be named `old/branch_name` where `branch_name` is a free form descriptive name.
+* Branches for development (new features) should be named `dev/branch-name` where `branch-name` is a free form descriptive name.
+* Branches for fixes (bugs, small things) should be named `fix/branch-name` where `branch-name` is a free form descriptive name.
+* Branches that will (likely) not be merged but kept for reference should be named `old/branch-name` where `branch-name` is a free form descriptive name.
+* Note that hyp
 * When the work is done, make a pull request for merging the branch into `develop`.
 * When the work has been merged, the branch should be deleted to keep things tidy.
 * When making a release, `develop` is merged into `main` and a release is made from `main`.
