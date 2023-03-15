@@ -24,6 +24,10 @@ Platform.
 In addition to this, DTCC Platform uses `kebab-case` for naming API endpoints,
 branches and scripts. For JSON `camelCase` is used.
 
+Scripts and binaries that are installed on the system should be named
+`dtcc-foo-bar`. Scripts that are *not* installed on the system (typicall
+small utility scripts) should be named `foo-bar` (without `dtcc-`).
+
 ## Git practices
 
 DTCC Platform uses the following Git practices:
