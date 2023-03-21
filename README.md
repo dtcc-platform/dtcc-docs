@@ -1,7 +1,7 @@
-# DTCC Doc
+# DTCC Docs
 
-DTCC Doc provides the common documentation for the DTCC Platform by
-sourcing and publishing the documentation for all DTCC Components.
+DTCC Docs provides the common documentation for the DTCC Platform by
+sourcing and publishing the documentation for all DTCC packages.
 
 This project is part the
 [Digital Twin Platform (DTCC Platform)](https://gitlab.com/dtcc-platform)
