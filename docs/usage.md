@@ -4,7 +4,7 @@ To build the documentation, run the script
 
     bin/build-docs
 
-This clones all DTCC package and copies there docs (folder `docs`) into
+This clones all DTCC packages and copies the docs (folder `docs`) into
 the directory `website/docs`.
 
 After the docs have been copied, run the following commands to build
