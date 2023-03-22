@@ -56,10 +56,10 @@ const sidebars = {
 			},
 			collapsed: false,
 			items: [
-				'dtcc-model/introduction',
-				'dtcc-model/installation',
-				'dtcc-model/usage',
-				'dtcc-model/development',
+				'dtcc-io/introduction',
+				'dtcc-io/installation',
+				'dtcc-io/usage',
+				'dtcc-io/development',
 			],
 		},
 		{
@@ -84,10 +84,10 @@ const sidebars = {
 			},
 			collapsed: false,
 			items: [
-				'dtcc-model/introduction',
-				'dtcc-model/installation',
-				'dtcc-model/usage',
-				'dtcc-model/development',
+				'dtcc-platform/introduction',
+				'dtcc-platform/installation',
+				'dtcc-platform/usage',
+				'dtcc-platform/development',
 			],
 		}
 	]
