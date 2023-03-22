@@ -6,6 +6,9 @@
 # This script builds the documentation for the DTCC Platform
 # by pulling documentation from all DTCC Components and then
 # building a website using Docusaurus.
+#
+# Note: In addition to adding new packages below, you must also
+# edit the file website/sidebars.js.
 
 PACKAGES="dtcc-builder dtcc-docs dtcc-io dtcc-model dtcc-platform"
 BRANCH=develop

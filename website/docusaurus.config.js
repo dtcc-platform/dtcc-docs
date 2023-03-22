@@ -96,8 +96,8 @@ const config = {
 		    title: 'Community',
 		    items: [
 			{
-			    label: 'GitLab',
-			    href: 'https://gitlab.com/dtcc-platform',
+			    label: 'GitHub',
+			    href: 'https://github.com/dtcc-platform',
 			},
 		    ],
 		},
