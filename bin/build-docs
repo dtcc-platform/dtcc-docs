@@ -7,34 +7,42 @@
 # by pulling documentation from all DTCC Components and then
 # building a website using Docusaurus.
 
+PACKAGES="dtcc-builder dtcc-docs dtcc-io dtcc-model dtcc-platform"
+BRANCH=develop
+
+TMPDIR=`pwd`/tmp/packages
+WEBDIR=`pwd`/website
+
 # Check that we are running the script from the root
-if [ ! -f bin/dtcc-build-documentation ]; then
+if [ ! -f bin/build-docs ]; then
     echo "*** This script must be run from the root directory"
     exit 1
 fi
 
-# Initialize and get latest submodules
-#git submodule update --init --recursive
-#git submodule update --remote
-git submodule init
-git submodule update
+# Create tempory directory
+rm -rf $TMPDIR
+mkdir -p $TMPDIR
 
-# Get list of submodules
-submodules=`git config --file .gitmodules --get-regexp path | awk '{ print $2 }'`
-
-# Extract documentation for submodules
-docdir="website/docs"
-for submodule in $submodules; do
-    echo "Extracting documentation for submodule $submodule..."
-    cd $submodule
-    git checkout develop
-    git pull
-    cd ..
-    rm -rf $docdir/$submodule
-    cp -r $submodule/doc $docdir/$submodule
+# Clone packages
+for PACKAGE in $PACKAGES; do
+    echo "Cloning package $PACKAGE..."
+    echo "---------------------------------"
+    git clone -b $BRANCH https://github.com/dtcc-platform/$PACKAGE.git $TMPDIR/$PACKAGE
+    echo ""
 done
 
-# Add documentation for dtcc-doc itself
-echo "Extracting documentation for dtcc-doc..."
-mkdir -p $docdir/dtcc-doc
-cp -r doc/* $docdir/dtcc-doc
+# Copy docs
+for PACKAGE in $PACKAGES; do
+    echo "Copying docs from $PACKAGE..."
+    rm -rf $WEBDIR/docs/$PACKAGE
+    cp -r $TMPDIR/$PACKAGE/docs $WEBDIR/docs/$PACKAGE
+done
+
+# Exclude JOSS paper
+echo "Excluding JOSS paper..."
+rm -r $WEBDIR/docs/dtcc-builder/paper-joss-2022
+
+# Remove temporary directory
+rm -rf $TMPDIR
+
+# Build website

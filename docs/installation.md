@@ -2,7 +2,7 @@
 
 ## Requirements
 
-DTCC Doc requires Node.js.
+DTCC Docs requires Node.js.
 
 To install on Mac, run the command
 
@@ -23,4 +23,4 @@ This directory was initially created by the command
 
 This is a one-time procedure that does not need to be repeated; the
 generated contents of the `website` are part of the Git repository of
-DTCC Doc.
+DTCC Docs.
