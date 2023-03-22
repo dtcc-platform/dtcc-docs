@@ -1,6 +1,6 @@
 # Introduction
 
-DTCC Doc provides the common documentation for the DTCC Platform by
+DTCC Docs provides the common documentation for the DTCC Platform by
 sourcing and publishing the documentation for all DTCC Components.
 
 The latest documentation of DTCC Platform is generated nightly and published as the

@@ -45,4 +45,15 @@ rm -r $WEBDIR/docs/dtcc-builder/paper-joss-2022
 # Remove temporary directory
 rm -rf $TMPDIR
 
-# Build website
+# Print help text
+echo ""
+echo "Run the following commands to build and launch the website:"
+echo ""
+echo "    cd website"
+echo "    npm install"
+echo "    npm start &"
+echo ""
+echo "The website will then be accessible at"
+echo ""
+echo "    http://localhost:3000/"
+echo ""
