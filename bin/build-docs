@@ -10,7 +10,7 @@
 # Note: In addition to adding new packages below, you must also
 # edit the file website/sidebars.js.
 
-PACKAGES="dtcc-builder dtcc-docs dtcc-io dtcc-model dtcc-platform"
+PACKAGES="dtcc-builder dtcc-docs dtcc-io dtcc-model dtcc"
 BRANCH=develop
 
 TMPDIR=`pwd`/tmp/packages

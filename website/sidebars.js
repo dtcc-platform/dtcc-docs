@@ -78,16 +78,16 @@ const sidebars = {
 		},
 		{
 			type: 'category',
-			label: 'DTCC Platform',
+			label: 'DTCC',
 			link: {
 				type: 'generated-index',
 			},
 			collapsed: false,
 			items: [
-				'dtcc-platform/introduction',
-				'dtcc-platform/installation',
-				'dtcc-platform/usage',
-				'dtcc-platform/development',
+				'dtcc/introduction',
+				'dtcc/installation',
+				'dtcc/usage',
+				'dtcc/development',
 			],
 		}
 	]
