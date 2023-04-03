@@ -22,8 +22,8 @@ jobs:
 
       - name: Install dependencies and build
         run:
-          #pwd && ls -alt
-          ./bin/dtcc-build-documentation 
+          pwd && ls -alt && cat ./bin/dtcc-build-documentation 
+          #./bin/dtcc-build-documentation 
           #&& cd website && npm install && npm run build
           #pwd
           #ls
