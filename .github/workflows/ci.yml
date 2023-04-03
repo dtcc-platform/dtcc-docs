@@ -22,7 +22,7 @@ jobs:
 
       - name: Install dependencies and build
         run:
-          pwd && ls -alt && ls bin/ && cd bin/ && cat dtcc-build-documentation 
+          pwd && ls -alt && ls bin/ && cd bin/ && cat build-docs 
           #./bin/dtcc-build-documentation 
           #&& cd website && npm install && npm run build
           #pwd
