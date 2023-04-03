@@ -23,9 +23,11 @@ jobs:
       - name: Install dependencies and build
         run: |
           pwd && ls -alt
-          sh ./bin/dtcc-build-documentation && cd website && npm install && npm run build
+          ./bin/dtcc-build-documentation && cd website && npm install && npm run build
           pwd
           ls
+        shell: bash
+
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v2
