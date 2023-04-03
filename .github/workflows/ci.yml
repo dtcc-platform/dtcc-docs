@@ -21,11 +21,12 @@ jobs:
           node-version: 16
 
       - name: Install dependencies and build
-        run: |
-          pwd && ls -alt
-          ./bin/dtcc-build-documentation && cd website && npm install && npm run build
-          pwd
-          ls
+        run:
+          #pwd && ls -alt
+          ./bin/dtcc-build-documentation 
+          #&& cd website && npm install && npm run build
+          #pwd
+          #ls
         shell: bash
 
 
