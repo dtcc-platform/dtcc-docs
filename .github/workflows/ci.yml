@@ -2,6 +2,9 @@ name: CI
 
 on:
   push:
+    paths: 
+      - 'docs/**'
+    repo: dtcc-platform/dtcc-docs
     branches:
       - develop
   pull_request:
