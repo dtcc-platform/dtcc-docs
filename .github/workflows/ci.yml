@@ -10,14 +10,14 @@ on:
       - develop
 #  workflow_dispatch:
     # Inputs the workflow accepts.
-    inputs:
-      name:
-        # Friendly description to be shown in the UI instead of 'name'
-        description: 'Variable'
-        # Default value if no value is explicitly provided
-        default: 'None'
-        # Input has to be provided for the workflow to run
-        required: true
+    #inputs:
+    #  name:
+    #    # Friendly description to be shown in the UI instead of 'name'
+    #    description: 'Variable'
+    #    # Default value if no value is explicitly provided
+    #    default: 'None'
+    #    # Input has to be provided for the workflow to run
+    #    required: true
 env:
   S3_BUCKET: dtccplatform
   
