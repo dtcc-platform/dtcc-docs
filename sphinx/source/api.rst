@@ -1,5 +1,5 @@
-API
-===
+DTCC Platform API
+=================
 
 .. automodule:: dtcc
     :members:

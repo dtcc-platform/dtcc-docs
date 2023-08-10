@@ -6,9 +6,9 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = "dtcc"
-copyright = "2023, DTCC"
-author = "DTCC"
+project = "DTCC Platform"
+copyright = "Digital Twin Cities Centre 2023"
+author = "Digital Twin Cities Centre"
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
@@ -25,6 +25,6 @@ exclude_patterns = []
 
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
-
-html_theme = "alabaster"
+#
+html_theme = "python_docs_theme"
 html_static_path = ["_static"]
